@@ -30,7 +30,6 @@ class OneskyClient(val apiKey: String, val apiSecret: String, val projectId: Int
     }
 
     fun download() {
-        println("Hello World")
     }
 
     fun authParams(): MutableList<Pair<String, String>> {
