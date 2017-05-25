@@ -8,7 +8,6 @@ import org.gradle.api.tasks.TaskAction
 class OneskyPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         with(project) {
-            OneskyClient().greet()
             extensions.create("onesky", OneskyExtension::class.java)
             tasks.create("uploadTranslationTask", UploadTranslationTask::class.java)
             tasks.create("downloadTranslationTask", DownloadTranslationTask::class.java)
@@ -24,7 +23,6 @@ open class UploadTranslationTask : DefaultTask() {
 
     @TaskAction
     fun uploadTranlation() {
-        OneskyClient().greet()
     }
 }
 

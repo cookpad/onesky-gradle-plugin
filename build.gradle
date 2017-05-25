@@ -21,6 +21,10 @@ apply plugin: 'kotlin'
 allprojects {
     repositories {
         jcenter()
+        maven {
+            url uri("./repo")
+        }
+        maven { url 'https://repo.gradle.org/gradle/repo' }
     }
 }
 
@@ -31,6 +35,10 @@ clean.dependsOn customClean
 
 repositories {
     mavenCentral()
+    maven {
+        url uri("./repo")
+    }
+    maven { url 'https://repo.gradle.org/gradle/repo' }
 }
 
 dependencies {

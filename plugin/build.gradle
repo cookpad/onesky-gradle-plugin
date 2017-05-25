@@ -11,7 +11,7 @@ buildscript {
         maven { url 'https://repo.gradle.org/gradle/repo' }
     }
     repositories {
-        mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
@@ -19,14 +19,20 @@ buildscript {
 }
 
 repositories {
-    mavenCentral()
+    jcenter()
+    maven {
+        url uri("../repo")
+    }
+    maven { url 'https://repo.gradle.org/gradle/repo' }
 }
 
 dependencies {
     compileOnly gradleApi()
-    
+
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+
+    compile "rejasupotaro:onesky:0.0.1-SNAPSHOT"
 }
 
 uploadArchives {
