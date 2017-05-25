@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>rejasupotaro</groupId>
+  <artifactId>onesky-gradle-plugin</artifactId>
+  <versioning>
+    <versions>
+      <version>0.0.1-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20170525184458</lastUpdated>
+  </versioning>
+</metadata>
