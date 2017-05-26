@@ -31,7 +31,6 @@ class OneskyClient(val apiKey: String, val apiSecret: String, val projectId: Int
         params.add("source_file_name" to "strings.xml")
         params.add("locale" to locale)
 
-        println("$urlPrefix/1/projects/$projectId/translations")
         return Fuel.get("$urlPrefix/projects/$projectId/translations", parameters = params).responseString()
     }
 

@@ -34,4 +34,5 @@ onesky {
     apiKey "<api-key>"
     apiSecret "<api-secret>"
     projectId 123456789
+    locales "es pt-BR"
 }
