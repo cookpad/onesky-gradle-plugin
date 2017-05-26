@@ -5,6 +5,11 @@ import org.gradle.api.tasks.TaskAction
 import java.io.File
 
 open class DownloadTranslationTask : OneskyTask() {
+    init {
+        group = "Translation"
+        description = "Download specified translation files (values-*/strings.xml)"
+    }
+
     val resDir by lazy { File("${project.projectDir.absolutePath}/src/main/res") }
 
     val locales by lazy {
@@ -14,15 +19,8 @@ open class DownloadTranslationTask : OneskyTask() {
             resDir
                     .listFiles()
                     .filter { it.name.startsWith("values-") }
-                    .map { it.name.replace("values-", "") }
-                    .map { it.replace("in", "id") }
-                    .map { it.replace("-r", "-") }
+                    .map { localeFromResDirName(it.name) }
         }
-    }
-
-    init {
-        group = "Translation"
-        description = "Download specified translation files (values-*/strings.xml)"
     }
 
     @TaskAction
@@ -35,7 +33,7 @@ open class DownloadTranslationTask : OneskyTask() {
             val (request, response, result) = oneskyClient.download(locale)
             when (result) {
                 is Result.Success -> {
-                    val file = File("${resDir.absolutePath}/values-${locale.replace("id", "in").replace("-", "-r")}/strings.xml")
+                    val file = File("${resDir.absolutePath}/${resDirNameFromLocale(locale)}/strings.xml")
                     file.writeText(result.value)
                 }
                 is Result.Failure -> {
@@ -44,5 +42,12 @@ open class DownloadTranslationTask : OneskyTask() {
             }
         }
     }
-}
 
+    private fun resDirNameFromLocale(locale: String): String {
+        return "values-${locale.replace("id", "in").replace("-", "-r")}"
+    }
+
+    private fun localeFromResDirName(dirName: String): String {
+        return dirName.replace("values-", "").replace("in", "id").replace("-r", "'-")
+    }
+}
