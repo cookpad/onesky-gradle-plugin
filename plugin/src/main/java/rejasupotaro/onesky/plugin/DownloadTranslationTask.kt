@@ -19,7 +19,7 @@ open class DownloadTranslationTask : OneskyTask() {
             resDir
                     .listFiles()
                     .filter { it.name.startsWith("values-") }
-                    .map { localeFromResDirName(it.name) }
+                    .map { localeFromValuesDirName(it.name) }
         }
     }
 
@@ -30,13 +30,12 @@ open class DownloadTranslationTask : OneskyTask() {
         }
 
         locales.forEach { locale ->
-            val targetResDirAndFileName = "${resDirNameFromLocale(locale)}/strings.xml"
-            print("Downloading $targetResDirAndFileName ... ")
+            val file = targetStringsFile(locale)
+            print("Downloading $locale translation into ${file.absolutePath} ... ")
 
             val (_, _, result) = oneskyClient.download(locale)
             when (result) {
                 is Result.Success -> {
-                    val file = File("${resDir.absolutePath}/$targetResDirAndFileName")
                     file.writeText(result.value)
                     println("Done!")
                 }
@@ -48,11 +47,23 @@ open class DownloadTranslationTask : OneskyTask() {
         }
     }
 
-    private fun resDirNameFromLocale(locale: String): String {
+    private fun targetStringsFile(locale: String): File {
+        val valuesDir = File("${resDir.absolutePath}/${valuesDirNameFromLocale(locale)}")
+        if (!valuesDir.exists()) {
+            valuesDir.mkdir()
+        }
+        val stringsFile = File("${valuesDir.absolutePath}/strings.xml")
+        if (!stringsFile.exists()) {
+            stringsFile.createNewFile()
+        }
+        return stringsFile
+    }
+
+    private fun valuesDirNameFromLocale(locale: String): String {
         return "values-${locale.replace("id", "in").replace("-", "-r")}"
     }
 
-    private fun localeFromResDirName(dirName: String): String {
-        return dirName.replace("values-", "").replace("in", "id").replace("-r", "'-")
+    private fun localeFromValuesDirName(dirName: String): String {
+        return dirName.replace("values-", "").replace("in", "id").replace("-r", "-")
     }
 }
