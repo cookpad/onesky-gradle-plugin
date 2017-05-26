@@ -5,8 +5,8 @@ import java.io.File
 
 open class UploadTranslationTask : OneskyTask() {
     init {
-        group = ""
-        description = ""
+        group = "Translation"
+        description = "Upload the default translation file (values/strings.xml)"
     }
 
     @TaskAction

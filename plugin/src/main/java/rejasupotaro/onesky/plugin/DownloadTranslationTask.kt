@@ -10,8 +10,8 @@ open class DownloadTranslationTask : OneskyTask() {
     }
 
     init {
-        group = ""
-        description = ""
+        group = "Translation"
+        description = "Download specified translation files (values-*/strings.xml)"
     }
 
     @TaskAction

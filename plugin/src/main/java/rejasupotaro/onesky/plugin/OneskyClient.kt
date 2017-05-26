@@ -31,7 +31,8 @@ class OneskyClient(val apiKey: String, val apiSecret: String, val projectId: Int
         params.add("source_file_name" to "strings.xml")
         params.add("locale" to locale)
 
-        return Fuel.get("$urlPrefix/projects/$projectId/translations", parameters = params).responseString()
+        return Fuel.get("$urlPrefix/projects/$projectId/translations", parameters = params)
+                .responseString()
     }
 
     fun authParams(): MutableList<Pair<String, String>> {
@@ -44,5 +45,3 @@ class OneskyClient(val apiKey: String, val apiSecret: String, val projectId: Int
                 "timestamp" to timestamp)
     }
 }
-
-
