@@ -30,13 +30,18 @@ open class DownloadTranslationTask : OneskyTask() {
         }
 
         locales.forEach { locale ->
-            val (request, response, result) = oneskyClient.download(locale)
+            val targetResDirAndFileName = "${resDirNameFromLocale(locale)}/strings.xml"
+            print("Downloading $targetResDirAndFileName ... ")
+
+            val (_, _, result) = oneskyClient.download(locale)
             when (result) {
                 is Result.Success -> {
-                    val file = File("${resDir.absolutePath}/${resDirNameFromLocale(locale)}/strings.xml")
+                    val file = File("${resDir.absolutePath}/$targetResDirAndFileName")
                     file.writeText(result.value)
+                    println("Done!")
                 }
                 is Result.Failure -> {
+                    println("Failed!")
                     throw result.error
                 }
             }
