@@ -22,16 +22,15 @@ open class DownloadTranslationTask : OneskyTask() {
 
         locales.forEach { locale ->
             println(locale)
-            oneskyClient.download(locale) { result ->
-                when (result) {
-                    is Result.Success -> {
-                        val file = File("${resDir.absolutePath}/values-${locale.replace("id", "in").replace("-", "-r")}/strings.xml")
-                        file.writeText(result.value)
-                    }
-                    is Result.Failure -> {
-                        println("error")
-                        throw result.error
-                    }
+            val (request, response, result) = oneskyClient.download(locale)
+            when (result) {
+                is Result.Success -> {
+                    val file = File("${resDir.absolutePath}/values-${locale.replace("id", "in").replace("-", "-r")}/strings.xml")
+                    file.writeText(result.value)
+                }
+                is Result.Failure -> {
+                    println("error")
+                    throw result.error
                 }
             }
         }

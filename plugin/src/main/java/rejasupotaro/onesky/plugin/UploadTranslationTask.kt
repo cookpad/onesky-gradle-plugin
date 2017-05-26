@@ -12,8 +12,7 @@ open class UploadTranslationTask : OneskyTask() {
     @TaskAction
     fun uploadTranlation() {
         val defaultTranslationFile = File("${project.projectDir.absolutePath}/src/main/res/values/strings.xml")
-        oneskyClient.upload(defaultTranslationFile) { result ->
-        }
+        val (request, response, result) = oneskyClient.upload(defaultTranslationFile)
     }
 }
 
