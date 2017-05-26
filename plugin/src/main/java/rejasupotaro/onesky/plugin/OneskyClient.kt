@@ -1,38 +1,31 @@
 package rejasupotaro.onesky.plugin
 
-import com.github.kittinunf.fuel.Fuel
 import com.github.kittinunf.fuel.core.FuelError
-import com.github.kittinunf.fuel.core.Request
-import com.github.kittinunf.fuel.core.Response
 import com.github.kittinunf.result.Result
 import org.apache.commons.codec.binary.Hex
 import java.io.File
 import java.security.MessageDigest
 
 class OneskyClient(val apiKey: String, val apiSecret: String, val projectId: Int) {
-    private val endpoint = "https://platform.api.onesky.io"
-    private val version = 1
-    private val urlPrefix
+    val endpoint = "https://platform.api.onesky.io"
+    val version = 1
+    val urlPrefix
         get() = "$endpoint/$version"
+    var httpClient = HttpClient()
 
-    fun upload(translationFile: File): Triple<Request, Response, Result<String, FuelError>> {
-        val params = authParams()
-        params.add("file_format" to "ANDROID_XML")
-
-        return Fuel.upload("$urlPrefix/projects/$projectId/files", parameters = params)
-                .source { _, _ -> translationFile }
-                .name { "file" }
-                .progress { _, _ -> }
-                .responseString()
-    }
-
-    fun download(locale: String): Triple<Request, Response, Result<String, FuelError>> {
+    fun download(locale: String): Result<String, FuelError> {
         val params = authParams()
         params.add("source_file_name" to "strings.xml")
         params.add("locale" to locale)
 
-        return Fuel.get("$urlPrefix/projects/$projectId/translations", parameters = params)
-                .responseString()
+        return httpClient.get("$urlPrefix/projects/$projectId/translations", params)
+    }
+
+    fun upload(translationFile: File): Result<String, FuelError> {
+        val params = authParams()
+        params.add("file_format" to "ANDROID_XML")
+
+        return httpClient.post("$urlPrefix/projects/$projectId/files", params, translationFile)
     }
 
     fun authParams(): MutableList<Pair<String, String>> {

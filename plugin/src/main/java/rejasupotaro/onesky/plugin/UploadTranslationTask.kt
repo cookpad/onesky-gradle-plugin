@@ -14,7 +14,7 @@ open class UploadTranslationTask : OneskyTask() {
     fun uploadTranlation() {
         val file = File("${project.projectDir.absolutePath}/src/main/res/values/strings.xml")
         print("Uploading ${file.absolutePath} ... ")
-        val (_, _, result) = oneskyClient.upload(file)
+        val result = oneskyClient.upload(file)
         when (result) {
             is Result.Success -> {
                 println("Done!")

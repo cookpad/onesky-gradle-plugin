@@ -33,7 +33,7 @@ open class DownloadTranslationTask : OneskyTask() {
             val file = targetStringsFile(locale)
             print("Downloading $locale translation into ${file.absolutePath} ... ")
 
-            val (_, _, result) = oneskyClient.download(locale)
+            val result = oneskyClient.download(locale)
             when (result) {
                 is Result.Success -> {
                     file.writeText(result.value)
