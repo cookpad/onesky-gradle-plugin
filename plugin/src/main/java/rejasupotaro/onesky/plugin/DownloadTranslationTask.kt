@@ -16,9 +16,11 @@ open class DownloadTranslationTask : OneskyTask() {
         if (oneskyExtension.locales.isNotEmpty()) {
             oneskyExtension.locales.split(" ")
         } else {
-            resDir
-                    .listFiles()
+            resDir.listFiles()
                     .filter { it.name.startsWith("values-") }
+                    .filter {
+                        File("${it.absolutePath}/strings.xml").exists()
+                    }
                     .map { localeFromValuesDirName(it.name) }
         }
     }
