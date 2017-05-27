@@ -77,4 +77,27 @@ class OneskyClientTest {
                 "timestamp",
                 "file_format")
     }
+
+    @Test
+    fun testLanguages() {
+        val httpClient = mock<HttpClient> {
+            on {
+                get(any<String>(), any<List<Pair<String, String>>>())
+            }.doReturn(mock<Result<String, FuelError>> {})
+        }
+        oneskyClient.httpClient = httpClient
+
+        oneskyClient.languages()
+
+        val urlCaptor = argumentCaptor<String>()
+        val paramsCaptor = argumentCaptor<List<Pair<String, String>>>()
+        verify(httpClient).get(
+                urlCaptor.capture(),
+                paramsCaptor.capture())
+        assertThat(urlCaptor.value).isEqualTo("https://platform.api.onesky.io/1/projects/123456789/languages")
+        assertThat(paramsCaptor.value.map { it.first }).containsOnly(
+                "api_key",
+                "dev_hash",
+                "timestamp")
+    }
 }

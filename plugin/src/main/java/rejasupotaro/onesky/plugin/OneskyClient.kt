@@ -28,6 +28,11 @@ class OneskyClient(val apiKey: String, val apiSecret: String, val projectId: Int
         return httpClient.post("$urlPrefix/projects/$projectId/files", params, translationFile)
     }
 
+    fun languages(): Result<String, FuelError> {
+        val params = authParams()
+        return httpClient.get("$urlPrefix/projects/$projectId/languages", params)
+    }
+
     fun authParams(): MutableList<Pair<String, String>> {
         val md = MessageDigest.getInstance("MD5")
         val timestamp = (System.currentTimeMillis() / 1000L).toString()
