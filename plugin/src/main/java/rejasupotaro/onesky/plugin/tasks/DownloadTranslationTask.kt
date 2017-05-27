@@ -1,7 +1,9 @@
-package rejasupotaro.onesky.plugin
+package rejasupotaro.onesky.plugin.tasks
 
 import com.github.kittinunf.result.Result
 import org.gradle.api.tasks.TaskAction
+import rejasupotaro.onesky.plugin.localeFromValuesDirName
+import rejasupotaro.onesky.plugin.valuesDirNameFromLocale
 import java.io.File
 
 open class DownloadTranslationTask : OneskyTask() {

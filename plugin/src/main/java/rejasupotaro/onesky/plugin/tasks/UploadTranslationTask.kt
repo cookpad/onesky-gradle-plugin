@@ -1,4 +1,4 @@
-package rejasupotaro.onesky.plugin
+package rejasupotaro.onesky.plugin.tasks
 
 import com.github.kittinunf.result.Result
 import org.gradle.api.tasks.TaskAction

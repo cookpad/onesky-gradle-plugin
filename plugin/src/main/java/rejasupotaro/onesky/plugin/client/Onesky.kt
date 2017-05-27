@@ -1,4 +1,4 @@
-package rejasupotaro.onesky.plugin
+package rejasupotaro.onesky.plugin.client
 
 import com.github.kittinunf.fuel.core.FuelError
 import com.github.kittinunf.result.Result
@@ -6,7 +6,7 @@ import org.apache.commons.codec.binary.Hex
 import java.io.File
 import java.security.MessageDigest
 
-class OneskyClient(val apiKey: String, val apiSecret: String, val projectId: Int) {
+class Onesky(val apiKey: String, val apiSecret: String, val projectId: Int) {
     val endpoint = "https://platform.api.onesky.io"
     val version = 1
     val urlPrefix

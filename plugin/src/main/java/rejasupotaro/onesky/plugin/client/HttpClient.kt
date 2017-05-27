@@ -1,4 +1,4 @@
-package rejasupotaro.onesky.plugin
+package rejasupotaro.onesky.plugin.client
 
 import com.github.kittinunf.fuel.Fuel
 import com.github.kittinunf.fuel.core.FuelError

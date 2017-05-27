@@ -2,6 +2,9 @@ package rejasupotaro.onesky.plugin
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import rejasupotaro.onesky.plugin.tasks.DownloadTranslationTask
+import rejasupotaro.onesky.plugin.tasks.ShowTranslationProgressTask
+import rejasupotaro.onesky.plugin.tasks.UploadTranslationTask
 
 class OneskyPlugin : Plugin<Project> {
     override fun apply(project: Project) {

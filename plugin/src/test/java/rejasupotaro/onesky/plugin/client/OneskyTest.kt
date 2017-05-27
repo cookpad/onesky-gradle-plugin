@@ -1,4 +1,4 @@
-package rejasupotaro.onesky.plugin
+package rejasupotaro.onesky.plugin.client
 
 import com.github.kittinunf.fuel.core.FuelError
 import com.github.kittinunf.result.Result
@@ -8,22 +8,22 @@ import org.junit.Test
 import java.io.File
 
 
-class OneskyClientTest {
-    val oneskyClient: OneskyClient by lazy {
+class OneskyTest {
+    val onesky: Onesky by lazy {
         val apiKey = "<api-key>"
         val apiSecret = "<api-secret>"
         val projectId = 123456789
-        OneskyClient(apiKey, apiSecret, projectId)
+        Onesky(apiKey, apiSecret, projectId)
     }
 
     @Test
     fun testUrlPrefix() {
-        assertThat(oneskyClient.urlPrefix).isEqualTo("https://platform.api.onesky.io/1")
+        assertThat(onesky.urlPrefix).isEqualTo("https://platform.api.onesky.io/1")
     }
 
     @Test
     fun testAuthParams() {
-        val params = oneskyClient.authParams()
+        val params = onesky.authParams()
         assertThat(params.map { it.first }).containsOnly("api_key", "dev_hash", "timestamp")
     }
 
@@ -34,9 +34,9 @@ class OneskyClientTest {
                 get(any<String>(), any<List<Pair<String, String>>>())
             }.doReturn(mock<Result<String, FuelError>> {})
         }
-        oneskyClient.httpClient = httpClient
+        onesky.httpClient = httpClient
 
-        oneskyClient.download("es")
+        onesky.download("es")
 
         val urlCaptor = argumentCaptor<String>()
         val paramsCaptor = argumentCaptor<List<Pair<String, String>>>()
@@ -60,9 +60,9 @@ class OneskyClientTest {
                 post(any<String>(), any<List<Pair<String, String>>>(), any<File>())
             }.doReturn(mock<Result<String, FuelError>> {})
         }
-        oneskyClient.httpClient = httpClient
+        onesky.httpClient = httpClient
 
-        oneskyClient.upload(file)
+        onesky.upload(file)
 
         val urlCaptor = argumentCaptor<String>()
         val paramsCaptor = argumentCaptor<List<Pair<String, String>>>()
@@ -85,9 +85,9 @@ class OneskyClientTest {
                 get(any<String>(), any<List<Pair<String, String>>>())
             }.doReturn(mock<Result<String, FuelError>> {})
         }
-        oneskyClient.httpClient = httpClient
+        onesky.httpClient = httpClient
 
-        oneskyClient.languages()
+        onesky.languages()
 
         val urlCaptor = argumentCaptor<String>()
         val paramsCaptor = argumentCaptor<List<Pair<String, String>>>()

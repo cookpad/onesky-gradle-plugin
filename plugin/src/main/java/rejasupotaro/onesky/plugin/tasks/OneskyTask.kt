@@ -1,6 +1,8 @@
-package rejasupotaro.onesky.plugin
+package rejasupotaro.onesky.plugin.tasks
 
 import org.gradle.api.DefaultTask
+import rejasupotaro.onesky.plugin.OneskyExtension
+import rejasupotaro.onesky.plugin.client.Onesky
 
 open class OneskyTask : DefaultTask() {
     val oneskyExtension by lazy {
@@ -11,7 +13,7 @@ open class OneskyTask : DefaultTask() {
         val apiKey = oneskyExtension.apiKey
         val apiSecret = oneskyExtension.apiSecret
         val projectId = oneskyExtension.projectId
-        OneskyClient(apiKey, apiSecret, projectId)
+        Onesky(apiKey, apiSecret, projectId)
     }
 }
 

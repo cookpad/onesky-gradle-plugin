@@ -1,4 +1,4 @@
-package rejasupotaro.onesky.plugin
+package rejasupotaro.onesky.plugin.tasks
 
 import com.github.kittinunf.result.Result
 import com.google.gson.annotations.SerializedName
@@ -6,6 +6,7 @@ import org.gradle.api.tasks.TaskAction
 import com.jakewharton.fliptables.FlipTable
 import org.joda.time.DateTime
 import org.joda.time.format.DateTimeFormat
+import rejasupotaro.onesky.plugin.gson
 
 
 open class ShowTranslationProgressTask : OneskyTask() {
