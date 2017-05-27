@@ -51,7 +51,7 @@ uploadArchives {
 publish {
     groupId = 'rejasupotaro'
     artifactId = 'onesky-gradle-plugin'
-    publishVersion = '0.0.1-SNAPSHOT'
+    publishVersion = '0.0.1'
     desc = 'Gradle plugin for OneSky'
     website = 'https://github.com/rejasupotaro/onesky-gradle-plugin'
     licences = ['MIT']
