@@ -8,4 +8,5 @@
 /captures
 .externalNativeBuild
 .idea
+credentials.gradle
 repo
