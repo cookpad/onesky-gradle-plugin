@@ -5,8 +5,7 @@ import com.google.gson.Gson
 import com.google.gson.annotations.SerializedName
 import org.gradle.api.tasks.TaskAction
 import com.jakewharton.fliptables.FlipTable
-
-
+import org.joda.time.DateTime
 
 
 open class ShowTranslationProgressTask : OneskyTask() {
@@ -31,7 +30,7 @@ open class ShowTranslationProgressTask : OneskyTask() {
     }
 
     private fun jsonToTranslations(json: String): List<Translation> {
-        val response = Gson().fromJson(json, Response::class.java)
+        val response = gson.fromJson(json, Response::class.java)
         return response.data.filterNot {
             it.isBaseLanguage
         }.filter {
@@ -60,7 +59,7 @@ open class ShowTranslationProgressTask : OneskyTask() {
         @SerializedName("region") val region = ""
         @SerializedName("is_base_language") val isBaseLanguage = false
         @SerializedName("translation_progress") val progress = ""
-        @SerializedName("last_updated_at") val lastUpdatedAt: String? = ""
+        @SerializedName("last_updated_at") val lastUpdatedAt: DateTime? = null
         @SerializedName("last_updated_at_timestamp") val lastUpdatedAtTimestamp: String? = ""
     }
 }

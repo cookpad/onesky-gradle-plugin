@@ -32,7 +32,7 @@ dependencies {
     compile "commons-codec:commons-codec:1.5"
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.jakewharton.fliptables:fliptables:1.0.2'
-
+    compile 'joda-time:joda-time:2.8.1'
 
     testCompile 'junit:junit:4.12'
     testCompile "org.assertj:assertj-core:2.1.0"
