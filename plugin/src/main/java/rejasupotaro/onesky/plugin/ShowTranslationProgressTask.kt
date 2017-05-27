@@ -1,11 +1,11 @@
 package rejasupotaro.onesky.plugin
 
 import com.github.kittinunf.result.Result
-import com.google.gson.Gson
 import com.google.gson.annotations.SerializedName
 import org.gradle.api.tasks.TaskAction
 import com.jakewharton.fliptables.FlipTable
 import org.joda.time.DateTime
+import org.joda.time.format.DateTimeFormat
 
 
 open class ShowTranslationProgressTask : OneskyTask() {
@@ -42,9 +42,10 @@ open class ShowTranslationProgressTask : OneskyTask() {
     }
 
     private fun printProgress(translations: List<Translation>) {
-        val headers = arrayOf("Locale", "Progress")
+        val headers = arrayOf("Locale", "Progress", "Last update at")
         val data = translations.map {
-            arrayOf(it.code, it.progress)
+            val lastUpdatedAt = DateTimeFormat.forPattern("yyyy/MM/dd HH:mm").print(it.lastUpdatedAt)
+            arrayOf(it.code, it.progress, lastUpdatedAt)
         }.toTypedArray()
         println(FlipTable.of(headers, data))
     }

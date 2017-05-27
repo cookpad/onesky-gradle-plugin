@@ -14,4 +14,3 @@ class GsonProviderTest {
         assertThat(translation.lastUpdatedAt!!.dayOfMonth).isEqualTo(23)
     }
 }
-
