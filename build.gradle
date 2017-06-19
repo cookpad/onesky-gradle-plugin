@@ -13,7 +13,7 @@ buildscript {
         classpath 'com.android.tools.build:gradle:2.3.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
-        classpath 'rejasupotaro:onesky-gradle-plugin:0.0.1-SNAPSHOT'
+        classpath 'rejasupotaro:onesky-gradle-plugin:0.1.1-SNAPSHOT'
         classpath 'com.novoda:bintray-release:0.5.0'
     }
 }
