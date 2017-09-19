@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Title for information bar when parking area is not found. -->
+    <string name="parking_area_not_found">No parking area found</string>
+    <!-- Description/sub-title to parking area not found state.-->
+    <string name="parking_area_refine_search">Refine your search or enter area code above</string>
+    <!-- Title for information bar when the user needs to zoom in -->
+    <string name="parking_area_zoom_in">Please zoom in</string>
+    <!-- Description/sub-title for information bar when user needs to zoom in -->
+    <string name="parking_area_view_areas">to view parking areas</string>
+    <!-- On-street parking place -->
+    <string name="parking_area_type_onstreet">On-street</string>
+    <!-- Off-street parking place -->
+    <string name="parking_area_type_offstreet">Off-street</string>
+    <!-- Gated parking space -->
+    <string name="parking_area_type_gated">Gated</string>
+    <!-- Surface lot -->
+    <string name="parking_area_type_surfacelot">Surface lot</string>
+    <!-- Underground garage -->
+    <string name="parking_area_type_underground_garage">Underground garage</string>
+    <!-- Above ground garage -->
+    <string name="parking_area_type_aboveground_garage">Above-ground garage</string>
+    <!-- Event parking area -->
+    <string name="parking_area_type_event">Event parking area</string>
+    <!-- Motor home parking. -->
+    <string name="parking_area_type_motor_home">Motor home parking</string>
+    <!-- Boat parking area. -->
+    <string name="parking_area_type_boat">Boat parking</string>
+    <!-- Electric Vehicle Charger parking slot. -->
+    <string name="parking_area_type_evc">EVC</string>
+</resources>

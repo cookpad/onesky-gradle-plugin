@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">App</string>
+    <!-- Dummy place holder. Contains just an empty line. -->
+    <string name="empty" translatable="false"/>
+
+    <!-- Helper for detecting DPI/resolution of the device. -->
+    <string name="resolution" translatable="false">DEFAULT</string>
 </resources>

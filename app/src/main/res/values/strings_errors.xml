@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Generic message for error -->
+    <string name="error_generic">An unknown error occurred.</string>
+    <!-- Device push token registration -->
+    <string name="error_device_register_validation">Validation error.</string>
+    <!-- Missed one of required parameters, GPS coordinates. -->
+    <string name="error_areas_around_point_params">Device position GPS-coordinates are badly captured.</string>
+    <!-- Missed one of required parameters, GPS bounds. -->
+    <string name="error_inrect_params">On map position GPS-coordinates are badly captured.</string>
+    <!-- Email or phone number missing for user -->
+    <string name="error_reset_password_params">Email or phone number missing for user.</string>
+    <!-- The deeplink token could not be found or has expired. -->
+    <string name="error_reset_password_expired">The link could not be processed or has expired.</string>
+    <!-- Parameter "token" not set. Parameter "smsCode" not set. Invalid password reset token. Password reset token is expired.-->
+    <string name="error_autologin_params">Cannot resolve auto login data.</string>
+    <!-- SMS validation code expired. -->
+    <string name="error_autologin_code_expired">SMS validation code expired.</string>
+    <!-- Invalid credentials. -->
+    <string name="error_login_invalid_credentials">Invalid credentials.</string>
+    <!-- Parking belongs to other user (access denied). Parking with ID not found. -->
+    <string name="error_delete_note_issue">Cannot modify notes. Access denied.</string>
+    <!-- Parking with ID not found. -->
+    <string name="error_parking_area_not_found">Parking area information not found.</string>
+    <!-- No valid tariff table configured. -->
+    <string name="error_parking_area_no_tariff">No valid tariff table configured.</string>
+    <!-- Validation error (end date before start date, etc). No ongoing parking found with that ID. -->
+    <string name="error_modify_parking_params">Wrong parking params.</string>
+    <!-- Parking belongs to other user (access denied). -->
+    <string name="error_modify_parking_access_denied">Access denied.</string>
+    <!-- Can not change parking end time to already passed time. -->
+    <string name="error_modify_parking_passed">Its too late to change. Parking already passed.</string>
+    <!-- Body parameter "parkingType" not set. Parking area country code invalid. -->
+    <string name="error_start_parking_invalid_area">Invalid parking area.</string>
+    <!-- Parking area not found. No valid tariff table configured. -->
+    <string name="error_start_parking_area_not_usable">Parking area unusable.</string>
+    <!-- User has already an ongoing parking. Another parking is not allowed for next X minutes. -->
+    <string name="error_start_parking_not_allowed_another_parking">You have already an ongoing parking or this parking area does not allow another parking within %1$s minutes.</string>
+    <!-- Parking end date is incorrect. -->
+    <string name="error_start_parking_invalid_parking_params">Parking params invalid. Please try again.</string>
+    <!-- User does not have enough balance on account (prepaid) to start parking with that length (try to send shorter end time).
+    User does not have enough balance on account (prepaid).-->
+    <string name="error_start_parking_not_enough_balance">Not enough amount on balance to start parking.</string>
+    <!-- ANPR car not found. -->
+    <string name="error_start_parking_no_anpr">ANPR car not found.</string>
+    <!-- User does not have valid subscription. -->
+    <string name="error_start_parking_no_subscription">Valid subscription is not found.</string>
+    <!-- Connection error with external system. Connection error with EVC pole. Other error. -->
+    <string name="error_start_parking_external_error">External system integration error.</string>
+    <!-- User has already an ongoing parking.-->
+    <string name="error_start_parking_already_ongoing">You already have an ongoing parking.</string>
+    <!-- Not allowed to start a parking with that car. -->
+    <string name="error_start_parking_car_not_allowed">You are not allowed to park this car</string>
+    <!-- No ongoing parking found with that ID. -->
+    <string name="error_stop_parking_not_found">Invalid parking ID.</string>
+    <!-- Parking belongs to other user (access denied). -->
+    <string name="error_stop_parking_access_denied">Cannot stop parking. Access denied.</string>
+    <!-- Parking has already been ended. -->
+    <string name="error_stop_parking_ended">Parking has already been ended.</string>
+    <!-- Parking belongs to other user (access denied). -->
+    <string name="error_update_parking_access_denied">Cannot update notes. Access denied.</string>
+    <!-- Parking with ID not found. -->
+    <string name="error_update_parking_not_found">Invalid parking ID.</string>
+    <!-- Query parameter "parkingType" not set. No valid tariff table configured. No parking area with that ID or no tariff table configured. -->
+    <string name="error_bucket_units_not_valid">Parking area not suitable for use.</string>
+    <!-- -->
+    <string name="gps_not_found_title">To continue, please turn ON location service on device</string>
+    <!-- -->
+    <string name="gps_not_found_message">Application want to use GPS, Wi-Fi, and cell networks for detecting you current position.</string>
+</resources>

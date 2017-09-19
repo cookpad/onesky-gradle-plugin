@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Welcome message of a login screen. -->
+    <string name="login_enjoy">Enjoy more with <b>EasyPark</b></string>
+    <!-- Enter phone number section title. -->
+    <string name="login_mobile_label">Enter your mobile number</string>
+    <!-- hint text for enter phone number input field, when user first time use the app. -->
+    <string name="login_mobile_hint">Enter your mobile number</string>
+    <!-- hint text for enter phone number input field, when user ready to enter the number. -->
+    <string name="login_mobile_number_preview_hint">070–123 45 67</string>
+    <!-- Password section title. -->
+    <string name="login_password_label">Welcome back, please enter your password.</string>
+    <!-- password input field hint -->
+    <string name="login_password_hint">Enter password</string>
+    <!-- 'request a new password' Link text -->
+    <string name="login_get_new_password">Get new password via SMS</string>
+    <!-- Message to user on 'get new password' link click -->
+    <string name="login_toast_new_password_sent">New password sent via SMS</string>
+    <!-- Title of the network error dialog. -->
+    <string name="login_network_error_title">Network Error</string>
+    <!-- Generic description of the network error reason on Login Screen. -->
+    <string name="login_network_error_description">Application has detected a network problems. Please check device network connection and retry.</string>
+    <!-- Title of the backend error dialog. -->
+    <string name="login_data_error_title">Data Error</string>
+    <!-- Reasoning of the backend error. -->
+    <string name="login_data_error_description">Please check entered data.</string>
+    <!-- Login screen background image description. -->
+    <string name="login_background_description">Background</string>
+    <!-- Logo image description -->
+    <string name="login_logo_description">EasyPark logo</string>
+    <!-- -->
+    <string name="login_temp_registered_dialog_topic">Not a registered account</string>
+    <!-- -->
+    <string name="login_temp_registered_dialog_content">Please choose a registered account!</string>
+
+
+    <!-- Auto Login via SMS -->
+    <eat-comment/>
+
+
+    <!-- AutoLogin with sms code Wizard dialog. -->
+    <string name="login_sms_verified_welcome">Welcome!</string>
+    <!-- Explain what user see now in AutoLogin first step. User should verify phone number and press NEXT button.  -->
+    <string name="login_sms_verified_details">Please verify your phone number below and press pink button \"Next\" to receive a verification code.</string>
+    <!-- Hidden hint text, for "fallback" scenario when for some reason phone number is not delivered from backend. -->
+    <string name="login_sms_verified_number_hint">Your phone number</string>
+    <!-- Verification SMS code expected. -->
+    <string name="login_sms_verified_label">A 4-digit code has now been sent to your phone via SMS. Please enter this code in the field below and press \"Next\" button.</string>
+    <!-- Request SMS verification code again. -->
+    <string name="login_sms_verified_new_code">Get new verification code via SMS</string>
+</resources>

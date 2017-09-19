@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- https://developer.android.com/guide/topics/resources/string-resource.html#FormattingAndStyling -->
+<resources>
+    <!-- Masked 4 digits of the card number. -->
+    <string name="payments_digits_mask">•••• %1$s</string>
+    <!-- Dialog title. -->
+    <string name="payments_title">Select payment method</string>
+
+
+    <!-- PAYMENTS -->
+    <eat-comment/>
+
+    <!-- -->
+    <string name="payments_setting_title">PAYMENT</string>
+    <!-- -->
+    <string name="payments_tab_methods">Payment methods</string>
+    <!-- -->
+    <string name="payments_tab_promo">Promo code</string>
+    <!-- -->
+    <string name="payments_add_method">+ Add a payment method</string>
+    <!-- -->
+    <string name="payments_add_private">+ Add a private account</string>
+    <!-- -->
+    <string name="payments_add_company">+ Add a company account</string>
+    <!-- -->
+    <string name="payments_private_title">PRIVATE</string>
+    <!-- -->
+    <string name="payments_business_title">BUSINESS</string>
+    <!-- -->
+    <string name="payments_change_update">CHANGE / UPDATE</string>
+    <!-- -->
+    <string name="payments_debit_credit">Debit/Credit card</string>
+    <!-- -->
+    <string name="payments_valid_till">Valid thru</string>
+    <!-- -->
+    <string name="payments_company_name">Company name</string>
+    <!-- -->
+    <string name="payments_payment_method">Payment method</string>
+    <!-- -->
+    <string name="payments_change_business">To make changes on your business account, please
+        login at &lt;Local EasyPark Business Web Page&gt; or call EasyPark at
+        &lt;local sales dept. number&gt;.</string>
+    <!-- -->
+    <string name="payments_button_www">WWW</string>
+    <!-- -->
+    <string name="payments_button_call">Call</string>
+    <!-- -->
+    <string name="payments_call_us_number">0770870000</string>
+    <!-- -->
+    <string name="payments_www_us">https://easypark.se/business#contact</string>
+    <!-- -->
+    <string name="payments_add_company_title">ADD A COMPANY ACCOUNT</string>
+    <!-- -->
+    <string name="payments_add_company_details">Enter your company name and e-mail address and Click \"Contact me\".
+    An EasyPark rep. will then contact You shortly.</string>
+    <!-- -->
+    <string name="payments_contact_me">CONTACT ME</string>
+    <!-- -->
+    <string name="payments_request_sent">Thank you! Your request will be processed shortly.</string>
+
+    <!-- Top up update -->
+    <eat-comment/>
+    
+    <!-- -->
+    <string name="top_up_balance_title">Current account balance</string>
+    <!-- -->
+    <string name="top_up_balance_subtitle">to use for parking</string>
+    <!-- -->
+    <string name="top_up_add_more_title">Add more funds</string>
+    <!-- -->
+    <string name="top_up_add_more_subtitle">Please specify the amount of funds you would like to add to your balance</string>
+    <!-- -->
+    <string name="top_up_add_funds_button_text">Add %1$s to account</string>
+    <!-- -->
+    <string name="top_up_adding_funds">Adding funds</string>
+    <!-- -->
+    <string name="top_up_funds_added">Funds added</string>
+</resources>

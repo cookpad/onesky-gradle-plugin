@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Save button. -->
+    <string name="generic_save">Save</string>
+    <!-- Show 'ALL' -->
+    <string name="generic_all">ALL</string>
+    <!-- Show 'Any Available' -->
+    <string name="generic_any">Any available</string>
+    <!-- Generic OK button label for message dialogs. -->
+    <string name="generic_ok">OK</string>
+    <!-- Generic RETRY button label, on network failure retry the operation. -->
+    <string name="generic_retry">Retry</string>
+    <!-- Generic cancel action. -->
+    <string name="generic_cancel">Cancel</string>
+    <!-- Generic 'Show Right Navigation Menu'. Show More Options. -->
+    <string name="generic_more">More</string>
+    <!-- Do not show the warning dialog again -->
+    <string name="generic_do_not_show">Do not show again</string>
+    <!-- Approve/Done/Confirmed action. -->
+    <string name="generic_done">Done</string>
+    <!-- Generic BUY button label for message dialogs. -->
+    <string name="generic_buy">Buy</string>
+    <!-- For showing in non-intrusive toast type/style messages. -->
+    <string name="generic_network_error">Network error</string>
+    <!-- Title of the network error dialog. -->
+    <string name="generic_network_error_title">Network Error</string>
+    <!-- Generic description of the network error reason. -->
+    <string name="generic_network_error_description">Application has detected network problems. Please check device network connection and retry.</string>
+    <!-- Title of the backend error dialog. -->
+    <string name="generic_data_error_title">Data Error</string>
+    <!-- Reasoning of the backend error. -->
+    <string name="generic_data_error_description">Please check entered data.</string>
+    <!-- The functionality is not available right now. -->
+    <string name="generic_not_implemented">Not implemented yet.</string>
+    <!-- Generic YES answer on a question. -->
+    <string name="generic_yes">Yes</string>
+</resources>

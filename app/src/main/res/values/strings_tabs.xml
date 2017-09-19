@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Find parking TAB title -->
+    <string name="home_tab_find_parking">FIND</string>
+    <!-- Default car number used when user did not select any car yet -->
+    <string name="home_tab_car_number">Vehicle</string>
+    <!-- Favorite parking areas TAB title -->
+    <string name="home_tab_favourites">Favourites</string>
+    <!-- Show More options TAB title-->
+    <string name="home_tab_more">More</string>
+</resources>

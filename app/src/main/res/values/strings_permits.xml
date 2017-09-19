@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Wait screen messages. -->
+    <eat-comment/>
+
+    <!-- -->
+    <string name="apply_for_permit">APPLY FOR A NEW PERMIT</string>
+    <!-- -->
+    <string name="permit_expires">Permit expires</string>
+    <!-- -->
+    <string name="subticket_expires">Ticket expires</string>
+    <!-- -->
+    <string name="change_vehicle">Change active vehicle</string>
+    <!-- -->
+    <string name="buy_ticket">Buy subticket</string>
+    <!-- -->
+    <string name="permit_type">Permit type:</string>
+    <!-- -->
+    <string name="active_vehicle">Active vehicle:</string>
+    <!-- -->
+    <string name="valid_from">Valid from:</string>
+    <!-- -->
+    <string name="valid_until">Valid until:</string>
+    <!-- -->
+    <string name="active_subticket">Active subticket</string>
+    <!-- -->
+    <string name="upcoming_subticket">Upcoming subticket</string>
+    <!-- -->
+    <string name="ticket_type">Ticket type:</string>
+    <!-- -->
+    <string name="select_subticket_header">Select subticket type</string>
+    <!-- -->
+    <string name="permits_confirm_purchase">Confirm purchase</string>
+    <!-- -->
+    <string name="selected_subticket_header">Selected ticket type:</string>
+    <!-- -->
+    <string name="selected_subticket_date_header">Ticket start date:</string>
+    <!-- -->
+    <string name="selected_subticket_payment_header">Payment method:</string>
+    <!-- -->
+    <string name="permits_change">Change</string>
+    <!-- -->
+    <string name="permit_payment_method_expiry">Valid thru %1$s</string>
+    <!-- -->
+    <string name="permit_select_start_date">Select start date</string>
+    <!-- -->
+    <string name="permit_select_start_time">Select start time</string>
+    <!-- -->
+    <string name="permit_confirm_purchase_header">Confirm purchase</string>
+    <!-- -->
+    <string name="permit_confirm_purchase">You\'re about to purchase a %1$s for %2$s with start date %3$s.\n\nDo you want to proceed?</string>
+    <!-- -->
+    <string name="permit_prepaid_balance">Your current prepaid balance is %1$.2f EUR</string>
+    <!-- -->
+    <string name="permit_history_link">View purchase history</string>
+    <!-- -->
+    <string name="permit_subticket_price">Ticket price:</string>
+    <!-- -->
+    <string name="permit_nbr_upcoming_tickets">You have (%1$d) subticket that will start after current ticket.</string>
+    <!-- -->
+    <string name="permit_renew_link">Permit renewal</string>
+    <!-- -->
+    <string name="permit_confirmed_header">Ticket purchased</string>
+    <!-- -->
+    <string name="permit_confirmed_text">Ticket purchased successfully.\n\nInformation about this ticket is found under More and My Parkings.</string>
+    <!-- -->
+    <string name="permit_missing_payment_method_header">Missing payment method</string>
+    <!-- -->
+    <string name="permit_missing_payment_method">You have to add a payment method before you can purchase tickets.</string>
+    <!-- -->
+    <string name="permit_active_subticket_header">Invalid date</string>
+    <!-- -->
+    <string name="permit_active_subticket_text">You already have an active subticket for the selected date.</string>
+</resources>

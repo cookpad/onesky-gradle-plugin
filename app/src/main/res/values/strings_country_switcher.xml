@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- SWEDEN -->
+    <eat-comment/>
+
+    <!-- -->
+    <string name="country_name_sweden">Sweden (+46)</string>
+    <!-- -->
+    <string name="country_help_sweden" translatable="false">https://m.easypark.se/help/</string>
+    <!-- -->
+    <string name="country_tc_sweden" translatable="false">/android/api/legal/termsandconditions/SE/sv</string>
+
+    <!-- DENMARK -->
+    <eat-comment/>
+
+    <!-- -->
+    <string name="country_name_denmark">Denmark (+45)</string>
+    <!-- -->
+    <string name="country_help_denmark" translatable="false">https://m.easypark.dk/help/</string>
+    <!-- -->
+    <string name="country_tc_denmark" translatable="false">/android/api/legal/termsandconditions/DK/da</string>
+
+    <!-- NORWAY -->
+    <eat-comment/>
+
+    <!-- -->
+    <string name="country_name_norway">Norway (+47)</string>
+    <!-- -->
+    <string name="country_help_norway" translatable="false">https://m.easypark.no/help/</string>
+    <!-- -->
+    <string name="country_tc_norway" translatable="false">/android/api/legal/termsandconditions/NO/no</string>
+
+    <!-- FINLAND -->
+    <eat-comment/>
+
+    <!-- -->
+    <string name="country_name_finland">Finland (+358)</string>
+    <!-- -->
+    <string name="country_help_finland" translatable="false">https://m.easypark.fi/help/</string>
+    <!-- -->
+    <string name="country_tc_finland" translatable="false">/android/api/legal/termsandconditions/FI/fi</string>
+
+    <!-- GERMANY -->
+    <eat-comment/>
+
+    <!-- -->
+    <string name="country_name_germany">Germany (+49)</string>
+    <!-- -->
+    <string name="country_help_germany" translatable="false">https://m.easypark.de/help/</string>
+    <!-- Terms and Conditions API suffix -->
+    <string name="country_tc_germany" translatable="false">/android/api/legal/termsandconditions/DE/de</string>
+    <!-- Privacy policy API suffix -->
+    <string name="country_pp_germany" translatable="false">/android/api/legal/privacypolicy/DE/de</string>
+
+    <!-- ITALY -->
+    <eat-comment/>
+
+    <!-- -->
+    <string name="country_name_italy">Italy (+39)</string>
+    <!-- -->
+    <string name="country_help_italy" translatable="false">https://m.easyparkitalia.it/help/</string>
+    <!-- -->
+    <string name="country_tc_italy" translatable="false">/android/api/legal/termsandconditions/IT/it</string>
+
+    <!-- SPAIN -->
+    <eat-comment/>
+
+    <!-- -->
+    <string name="country_name_spain">Spain (+34)</string>
+    <!-- -->
+    <string name="country_help_spain" translatable="false">https://m.easypark.es/help/</string>
+    <!-- -->
+    <string name="country_tc_spain" translatable="false">/android/api/legal/termsandconditions/ES/es</string>
+
+    <!-- FRANCE -->
+    <eat-comment/>
+
+    <!-- -->
+    <string name="country_name_france">France (+33)</string>
+    <!-- -->
+    <string name="country_help_france" translatable="false">https://m.easypark.fr/help/</string>
+    <!-- -->
+    <string name="country_tc_france" translatable="false">/android/api/legal/termsandconditions/FR/fr</string>
+
+    <!-- AUSTRIA -->
+    <eat-comment/>
+
+    <!-- -->
+    <string name="country_name_austria">Austria (+43)</string>
+    <!-- -->
+    <string name="country_help_austria" translatable="false">https://m.easypark.at/help/</string>
+    <!-- -->
+    <string name="country_tc_austria" translatable="false">/android/api/legal/termsandconditions/AT/en</string>
+
+    <!-- AUSTRALIA -->
+    <eat-comment/>
+
+    <!-- -->
+    <string name="country_name_australia">Australia (+61)</string>
+    <!-- -->
+    <string name="country_help_australia" translatable="false">https://easypark.com.au/support/q-a/</string>
+    <!-- -->
+    <string name="country_tc_australia" translatable="false">/android/api/legal/termsandconditions/AU/en</string>
+
+    <!-- Netherlands -->
+    <eat-comment/>
+
+    <!-- -->
+    <string name="country_name_dutch">Netherlands (+31)</string>
+    <!-- -->
+    <string name="country_help_dutch" translatable="false">https://m.easypark.se/help/</string>
+    <!-- -->
+    <string name="country_tc_dutch" translatable="false">/android/api/legal/termsandconditions/NL/nl</string>
+    <!-- -->
+    <string name="country_pp_dutch" translatable="false">/android/api/legal/privacypolicy/NL/nl</string>
+
+    <!--
+    Holland -> https://m.easyparknederland.nl/help/
+    Belgium -> https://m.easypark.be/help/
+    -->
+    <eat-comment/>
+
+    <!-- Title of the country selector activity. -->
+    <string name="flag_picker_title">Select country</string>
+</resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- -->
+    <string name="destination_address">Destination address</string>
+    <!-- -->
+    <string name="start_navigation">GO</string>
+    <!-- -->
+    <string name="go_to_pay">PAY</string>
+    <!-- -->
+    <string name="loading_route">Searching optimal route</string>
+    <!-- -->
+    <string name="location_not_supported">This location is not supported yet</string>
+    <!-- -->
+    <string name="location_not_available">Could not find your location</string>
+    <!-- -->
+    <string name="route_load_error">Could not load optimal route</string>
+    <!-- -->
+    <string name="route_calculation_error">Could not calculate navigation route</string>
+    <!-- -->
+    <string name="search_time">%1$s minutes to find a parking</string>
+    <!-- -->
+    <string name="start_looking_for_parking">You can now start to look for parking</string>
+    <!-- -->
+    <string name="distance">Distance</string>
+    <!-- -->
+    <string name="on_street_headline">Street parking</string>
+    <!-- -->
+    <string name="parking_guidance_bottom_bar_find">FIND-O-METER</string>
+    <!-- -->
+    <string name="parking_guidance_bottom_bar_close">Close</string>
+    <!-- -->
+    <string name="parking_guidance_bottom_bar_arrival">Arrival</string>
+    <!-- -->
+    <string name="segment_probability_green">Good chance to find parking</string>
+    <!-- -->
+    <string name="segment_probability_yellow">Medium chance to find parking</string>
+    <!-- -->
+    <string name="segment_probability_orange">Low chance to find parking</string>
+    <!-- -->
+    <string name="navigation_reroute">Rerouting</string>
+    <!-- -->
+    <string name="walking_distance_header">Walk</string>
+    <!-- -->
+    <string name="distance_to_destination_header">Distance</string>
+    <!-- -->
+    <string name="distance_km">%1$.1f km</string>
+    <!-- -->
+    <string name="distance_m">%1$d m</string>
+    <!-- Parking guidance navigation disclaimer headline -->
+    <string name="parking_guidance_disclaimer_header">Welcome to\nEasyPark FIND navigation</string>
+    <!-- Parking guidance navigation disclaimer first paragraph -->
+    <string name="parking_guidance_disclaimer_first_p">You will be guided on the optimal route to find parking around your destination - Keep a look out for an available spot.</string>
+    <!-- Parking guidance navigation disclaimer second paragraph -->
+    <string name="parking_guidance_disclaimer_second_p">Keep your eyes on the road and always follow the law.</string>
+    <!-- Parking guidance navigation disclaimer terms of use link -->
+    <string name="parking_guidance_disclaimer_link">Terms of use apply.</string>
+    <!-- Parking guidance navigation disclaimer accept button -->
+    <string name="parking_guidance_disclaimer_accept_button">Accept</string>
+    <!-- Parking guidance navigation disclaimer blue beta stripe top right corner -->
+    <string name="parking_guidance_disclaimer_beta">Beta</string>
+</resources>

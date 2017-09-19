@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Receipt on Parking End -->
+    <eat-comment/>
+
+    <string name="receipt_title">Parking receipt</string>
+    <string name="receipt_add_note">Add Note</string>
+    <string name="receipt_send_email">Send receipt via email</string>
+    <string name="receipt_fine_print">The parking fee has been assigned to and shall be paid to EasyPark</string>
+    <!-- Currency formatting:
+    %1 - float, %2 - currency
+    Expected: 0.00 SEK
+     -->
+    <string name="receipt_amount" formatted="false">%1$02.2f %2$s</string>
+    <!-- https://developer.android.com/reference/java/util/Formatter.html#dt
+     %1 - start time; %2 - end time;
+     Expected: 31 January 2017
+    -->
+    <string name="receipt_date" formatted="false">%1$te %1$tB %1$tY</string>
+    <!-- Extended format for date difference displaying,
+     Expected: 31 January 2017 - 31 January 2018
+     -->
+    <string name="receipt_date_big" formatted="false">%1$te %1$tB %1$tY - %2$te %2$tB %2$tY</string>
+    <!-- https://developer.android.com/reference/java/util/Formatter.html#dt
+     %1 - start time; %2 - end time; %3 - duration hours, %4 - duration minutes
+     Expected: 08:32 - 23:00 / 33h 15m
+     -->
+    <string name="receipt_time" formatted="false">%1$tH:%1$tM - %2$tH:%2$tM / %3$02.0fh %4$02.0fm</string>
+
+
+    <!-- Receipt Via Email -->
+    <eat-comment/>
+
+    <!-- Hint text for edit field 'receipt notes'. -->
+    <string name="receipt_add_note_hint">Add note…</string>
+    <!-- Receipt via Email description. -->
+    <string name="receipt_note_email"><b>Note!</b> The e-mail receipt is sent the next day and holds all your parkings from the previous day</string>
+    <!-- Label shown before the email address. -->
+    <string name="receipt_sent_to">The receipt is sent to:</string>
+    <!-- message shown when user do not have defined email address. -->
+    <string name="receipt_no_email">Email address is missing</string>
+    <!-- Price per PDF receipt sending. -->
+    <string name="receipt_price_per_receipt_pdf">Price: %1$02.2f %2$s / PDF-receipt</string>
+    <!-- Price per PDF receipt sending. -->
+    <string name="receipt_price_per_confirm_pdf">Price: %1$02.2f %2$s / PDF-confirmation</string>
+    <!-- Button, order email receipt -->
+    <string name="receipt_order_email_receipt">Order e-mail receipt (PDF)</string>
+    <!-- Button, edit email address -->
+    <string name="receipt_edit_email">Edit e-mail address</string>
+    <!-- Button, cancel dialog. -->
+    <string name="receipt_cancel">Cancel</string>
+    <!-- Confirmation message, shown when ordered PDF confirmation. -->
+    <string name="receipt_order_applied">E-mail receipt requested.</string>
+</resources>

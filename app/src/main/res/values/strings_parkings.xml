@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- -->
+    <string name="parkings_expires">expires</string>
+    <!-- -->
+    <string name="parkings_expires_time">expires (%1$s)</string>
+    <!-- -->
+    <string name="parkings_no_permits">You have no active permits</string>
+    <!-- -->
+    <string name="parkings_no_history">You have no parkings in history</string>
+    <!-- -->
+    <string name="parkings_no_ongoing">You have no ongoing parkings</string>
+</resources>
