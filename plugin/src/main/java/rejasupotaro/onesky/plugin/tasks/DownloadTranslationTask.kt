@@ -2,7 +2,6 @@ package rejasupotaro.onesky.plugin.tasks
 
 import com.github.kittinunf.result.Result
 import org.gradle.api.tasks.TaskAction
-import rejasupotaro.onesky.plugin.localeFromValuesDirName
 import rejasupotaro.onesky.plugin.valuesDirNameFromLocale
 import java.io.File
 
@@ -12,19 +11,8 @@ open class DownloadTranslationTask : OneskyTask() {
         description = "Download specified translation files (values-*/strings.xml)"
     }
 
-    val resDir by lazy { File("${project.projectDir.absolutePath}/src/main/res") }
-
     val locales by lazy {
-        if (oneskyExtension.locales.isEmpty()) {
-            resDir.listFiles()
-                    .filter { it.name.startsWith("values-") }
-                    .filter {
-                        File("${it.absolutePath}/strings.xml").exists()
-                    }
-                    .map { localeFromValuesDirName(it.name) }
-        } else {
-            oneskyExtension.locales
-        }
+        oneskyExtension.locales
     }
 
     @TaskAction
@@ -33,33 +21,45 @@ open class DownloadTranslationTask : OneskyTask() {
             throw IllegalArgumentException("You should provide locales or values-* directories should be created before running this task")
         }
 
-        locales.forEach { locale ->
-            val file = targetStringsFile(locale)
-            print("Downloading $locale translation into ${file.absolutePath} ... ")
+        println("Plugin version: ${version}")
 
-            val result = oneskyClient.download(locale)
-            when (result) {
-                is Result.Success -> {
-                    file.writeText(result.value)
-                    println("Done!")
-                }
-                is Result.Failure -> {
-                    println("Failed!")
-                    throw result.error
+        locales.parallelStream().forEach { locale ->
+            filteredFiles.forEach { fileO ->
+                val file = targetStringsFile(locale, fileO)
+                print("Downloading '$locale' translation into ${file.absolutePath} ... ")
+
+                val start = System.currentTimeMillis()
+                val result = oneskyClient.downloadFile(locale, fileO.name)
+                when (result) {
+                    is Result.Success -> {
+                        file.writeText(result.value)
+
+                        // prevent OneSky empty files
+                        if (file.readText().isBlank()) file.delete()
+
+                        println("Done! ${System.currentTimeMillis() - start}ms")
+                    }
+
+                    is Result.Failure -> {
+                        if (file.readText() == "<resources/>") file.delete()
+                    }
                 }
             }
         }
     }
 
-    private fun targetStringsFile(locale: String): File {
+    private fun targetStringsFile(locale: String, source: File): File {
         val valuesDir = File("${resDir.absolutePath}/${valuesDirNameFromLocale(locale)}")
         if (!valuesDir.exists()) {
             valuesDir.mkdir()
         }
-        val stringsFile = File("${valuesDir.absolutePath}/strings.xml")
+
+        val stringsFile = File("${valuesDir.absolutePath}/${source.name}")
         if (!stringsFile.exists()) {
             stringsFile.createNewFile()
+            stringsFile.writeText("<resources/>")  // make new file a valid resource file
         }
+
         return stringsFile
     }
 }

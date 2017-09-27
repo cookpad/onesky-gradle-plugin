@@ -8,8 +8,15 @@ import java.io.File
 open class HttpClient {
 
     open fun get(url: String, params: List<Pair<String, String>>): Result<String, FuelError> {
-        val (_, _, result) = Fuel.get(url, parameters = params)
+        val (r, o, result) = Fuel.get(url, parameters = params)
                 .responseString()
+
+        if(result is Result.Failure) {
+            println("Failed! ${result.error.exception.javaClass.simpleName}")
+//            println(r.toString())
+//            println(o.toString())
+        }
+
         return result
     }
 
@@ -18,6 +25,8 @@ open class HttpClient {
                 .source { _, _ -> file }
                 .name { "file" }
                 .responseString()
+
+
         return result
     }
 }

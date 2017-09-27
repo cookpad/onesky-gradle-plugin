@@ -10,6 +10,7 @@ class OneskyPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         with(project) {
             extensions.create("onesky", OneskyExtension::class.java)
+
             tasks.create("downloadTranslation", DownloadTranslationTask::class.java)
             tasks.create("uploadTranslation", UploadTranslationTask::class.java)
             tasks.create("showTranslationProgress", ShowTranslationProgressTask::class.java)

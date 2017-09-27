@@ -2,7 +2,6 @@ package rejasupotaro.onesky.plugin.tasks
 
 import com.github.kittinunf.result.Result
 import org.gradle.api.tasks.TaskAction
-import java.io.File
 
 open class UploadTranslationTask : OneskyTask() {
     init {
@@ -12,18 +11,26 @@ open class UploadTranslationTask : OneskyTask() {
 
     @TaskAction
     fun uploadTranlation() {
-        val file = File("${project.projectDir.absolutePath}/src/main/res/values/strings.xml")
-        print("Uploading ${file.absolutePath} ... ")
-        val result = oneskyClient.upload(file)
-        when (result) {
-            is Result.Success -> {
-                println("Done!")
-            }
-            is Result.Failure -> {
-                println("Failed!")
-                throw result.error
+        println("Plugin version: ${version}")
+
+        filteredFiles.parallelStream().forEach { file ->
+            print("Uploading ${file.absolutePath} ... ")
+
+            val start = System.currentTimeMillis()
+
+            val result = oneskyClient.upload(file)
+            when (result) {
+                is Result.Success -> {
+                    println("Done! ${System.currentTimeMillis() - start}ms")
+                }
+
+                is Result.Failure -> {
+                    println("Failed!")
+                    throw result.error
+                }
             }
         }
+
     }
 }
 
