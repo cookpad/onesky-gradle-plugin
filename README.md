@@ -35,3 +35,12 @@ onesky {
     projectId <project_id>
 }
 ```
+
+
+## Compilation
+
+Publish SNAPSHOT version of the PLUGIN to local repository:
+
+```bash
+./gradlew uploadArchives
+```
