@@ -3,7 +3,7 @@
 
 *.iml
 /local.properties
-/credentials.gradle
+credentials.gradle
 
 .gradle/
 .idea/
