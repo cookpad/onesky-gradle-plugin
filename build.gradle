@@ -47,5 +47,11 @@ dependencies {
 }
 
 def fileCredentials = new File('credentials.gradle')
-if (!fileCredentials.exists()) fileCredentials.createNewFile()
+if (!fileCredentials.exists()){
+    fileCredentials.createNewFile()
+    fileCredentials.append("// https://easypark.oneskyapp.com/admin/site/settings\n")
+    fileCredentials.append("ext.oneskyApiKey = '<api-key>'\n")
+    fileCredentials.append("ext.oneskyApiSecret = '<api-secret>'\n")
+    fileCredentials.append("ext.oneskyProjectId = 123456789\n")
+}
 apply from: rootProject.file('credentials.gradle')

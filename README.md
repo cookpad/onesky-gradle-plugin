@@ -39,8 +39,14 @@ onesky {
 
 ## Compilation
 
+On first run you should disable `:app` project - This is a sample of plugin use.
+
+Open `settings.gradle` and comment line `include ':app'`
+
 Publish SNAPSHOT version of the PLUGIN to local repository:
 
 ```bash
 ./gradlew uploadArchives
 ```
+
+Now you can uncomment line in `settings.gradle` and run project as usual.

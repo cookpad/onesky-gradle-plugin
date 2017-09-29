@@ -1,3 +1,16 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url uri("../repo")
+        }
+        maven { url 'https://repo.gradle.org/gradle/repo' }
+    }
+    dependencies {
+        classpath 'rejasupotaro:onesky-gradle-plugin:+'
+    }
+}
+
 apply plugin: 'com.android.application'
 apply plugin: 'rejasupotaro.onesky.plugin'
 
@@ -31,7 +44,12 @@ dependencies {
 }
 
 onesky {
+    locales = ['en', 'ca', 'de', 'es', 'fi', 'fr', 'it', 'nl', 'nb', 'no', 'sv', 'da']
+
     apiKey oneskyApiKey
     apiSecret oneskyApiSecret
     projectId oneskyProjectId
+
+    includes = ['strings.*.xml']
+    excludes = ['strings.xml']
 }
