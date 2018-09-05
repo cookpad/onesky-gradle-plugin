@@ -28,6 +28,31 @@ class OneskyTest {
     }
 
     @Test
+    fun testGetTranslationsStatus() {
+        val httpClient = mock<HttpClient> {
+            on {
+                get(any<String>(), any<List<Pair<String, String>>>())
+            }.doReturn(mock<Result<String, FuelError>> {})
+        }
+        onesky.httpClient = httpClient
+
+        onesky.getTranslationsStatus("es")
+
+        val urlCaptor = argumentCaptor<String>()
+        val paramsCaptor = argumentCaptor<List<Pair<String, String>>>()
+        verify(httpClient).get(
+                urlCaptor.capture(),
+                paramsCaptor.capture())
+        assertThat(urlCaptor.value).isEqualTo("https://platform.api.onesky.io/1/projects/123456789/translations/status")
+        assertThat(paramsCaptor.value.map { it.first }).containsOnly(
+                "api_key",
+                "dev_hash",
+                "timestamp",
+                "locale",
+                "file_name")
+    }
+
+    @Test
     fun testDownload() {
         val httpClient = mock<HttpClient> {
             on {
