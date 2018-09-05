@@ -15,7 +15,7 @@ open class DownloadTranslationTask : OneskyTask() {
     val resDir by lazy { File("${project.projectDir.absolutePath}/src/main/res") }
 
     val locales by lazy {
-        if (oneskyExtension.locales.isEmpty()) {
+        if (oneskyExtension!!.locales.isEmpty()) {
             resDir.listFiles()
                     .filter { it.name.startsWith("values-") }
                     .filter {
@@ -23,7 +23,7 @@ open class DownloadTranslationTask : OneskyTask() {
                     }
                     .map { localeFromValuesDirName(it.name) }
         } else {
-            oneskyExtension.locales
+            oneskyExtension!!.locales
         }
     }
 
