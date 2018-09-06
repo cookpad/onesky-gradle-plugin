@@ -43,8 +43,8 @@ class OneskyTest {
         verify(httpClient).get(
                 urlCaptor.capture(),
                 paramsCaptor.capture())
-        assertThat(urlCaptor.value).isEqualTo("https://platform.api.onesky.io/1/projects/123456789/translations")
-        assertThat(paramsCaptor.value.map { it.first }).containsOnly(
+        assertThat(urlCaptor.firstValue).isEqualTo("https://platform.api.onesky.io/1/projects/123456789/translations")
+        assertThat(paramsCaptor.firstValue.map { it.first }).containsOnly(
                 "api_key",
                 "dev_hash",
                 "timestamp",
@@ -70,8 +70,8 @@ class OneskyTest {
                 urlCaptor.capture(),
                 paramsCaptor.capture(),
                 eq(file))
-        assertThat(urlCaptor.value).isEqualTo("https://platform.api.onesky.io/1/projects/123456789/files")
-        assertThat(paramsCaptor.value.map { it.first }).containsOnly(
+        assertThat(urlCaptor.firstValue).isEqualTo("https://platform.api.onesky.io/1/projects/123456789/files")
+        assertThat(paramsCaptor.firstValue.map { it.first }).containsOnly(
                 "api_key",
                 "dev_hash",
                 "timestamp",
@@ -94,8 +94,8 @@ class OneskyTest {
         verify(httpClient).get(
                 urlCaptor.capture(),
                 paramsCaptor.capture())
-        assertThat(urlCaptor.value).isEqualTo("https://platform.api.onesky.io/1/projects/123456789/languages")
-        assertThat(paramsCaptor.value.map { it.first }).containsOnly(
+        assertThat(urlCaptor.firstValue).isEqualTo("https://platform.api.onesky.io/1/projects/123456789/languages")
+        assertThat(paramsCaptor.firstValue.map { it.first }).containsOnly(
                 "api_key",
                 "dev_hash",
                 "timestamp")

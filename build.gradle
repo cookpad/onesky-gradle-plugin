@@ -1,8 +1,9 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.1.2-3'
+    ext.kotlin_version = '1.2.50'
     repositories {
+        google()
         jcenter()
         maven {
             url uri("./repo")
@@ -10,10 +11,9 @@ buildscript {
         maven { url 'https://repo.gradle.org/gradle/repo' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.2'
+        classpath 'com.android.tools.build:gradle:3.1.4'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
-        classpath 'rejasupotaro:onesky-gradle-plugin:0.1.1-SNAPSHOT'
         classpath 'com.novoda:bintray-release:0.5.0'
     }
 }
@@ -40,10 +40,19 @@ repositories {
         url uri("./repo")
     }
     maven { url 'https://repo.gradle.org/gradle/repo' }
+    google()
 }
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 }
 
+def fileCredentials = new File('credentials.gradle')
+if (!fileCredentials.exists()){
+    fileCredentials.createNewFile()
+    fileCredentials.append("// https://easypark.oneskyapp.com/admin/site/settings\n")
+    fileCredentials.append("ext.oneskyApiKey = '<api-key>'\n")
+    fileCredentials.append("ext.oneskyApiSecret = '<api-secret>'\n")
+    fileCredentials.append("ext.oneskyProjectId = 123456789\n")
+}
 apply from: rootProject.file('credentials.gradle')

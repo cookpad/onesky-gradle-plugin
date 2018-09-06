@@ -10,9 +10,9 @@ open class OneskyTask : DefaultTask() {
     }
 
     val oneskyClient by lazy {
-        val apiKey = oneskyExtension.apiKey
-        val apiSecret = oneskyExtension.apiSecret
-        val projectId = oneskyExtension.projectId
+        val apiKey = oneskyExtension!!.apiKey
+        val apiSecret = oneskyExtension!!.apiSecret
+        val projectId = oneskyExtension!!.projectId
         Onesky(apiKey, apiSecret, projectId)
     }
 }
