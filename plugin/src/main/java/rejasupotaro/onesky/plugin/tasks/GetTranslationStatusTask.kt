@@ -47,7 +47,7 @@ open class GetTranslationStatusTask : OneskyTask() {
         @SerializedName("code") val code = ""
         @SerializedName("english_name") val englishName = ""
         @SerializedName("local_name") val localName = ""
-        @SerializedName("locale") val localName = ""
-        @SerializedName("regison") val wordCount = ""
+        @SerializedName("locale") val locale = ""
+        @SerializedName("region") val region = ""
     }
 }
