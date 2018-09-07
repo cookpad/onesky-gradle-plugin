@@ -21,6 +21,15 @@ class Onesky(val apiKey: String, val apiSecret: String, val projectId: Int) {
         return httpClient.get("$urlPrefix/projects/$projectId/translations", params)
     }
 
+    fun getTranslationsStatus(locale: String): Result<String, FuelError> {
+        val params = authParams()
+
+        params.add("file_name" to "base.xliff")
+        params.add("locale" to locale)
+
+        return httpClient.get("$urlPrefix/projects/$projectId/translations/status", params)
+    }
+
     fun upload(translationFile: File): Result<String, FuelError> {
         val params = authParams()
         params.add("file_format" to "ANDROID_XML")
