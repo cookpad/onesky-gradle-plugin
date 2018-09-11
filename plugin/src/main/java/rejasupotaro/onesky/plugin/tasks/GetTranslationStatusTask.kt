@@ -13,7 +13,8 @@ open class GetTranslationStatusTask : OneskyTask() {
 
     @TaskAction
     fun getTranslationStatus() {
-        val result = oneskyClient.languages()
+        // TODO: change to lead configuration files
+        val result = oneskyClient.getTranslationsStatus("en-US")
         when (result) {
             is Result.Success -> {
                 val translations = jsonToTranslationStatus(result.value)

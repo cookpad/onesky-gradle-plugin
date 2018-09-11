@@ -6,7 +6,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.github.cookpad:onesky-gradle-plugin:5f786395df'
+        classpath 'com.github.cookpad:onesky-gradle-plugin:201655ab41'
     }
 }
 apply plugin: 'rejasupotaro.onesky.plugin'
