@@ -2,11 +2,14 @@ apply plugin: 'com.android.application'
 
 buildscript {
     repositories {
-        maven { url 'https://jitpack.io' }
         jcenter()
+        maven {
+            url uri("./repo")
+        }
+        maven { url 'https://repo.gradle.org/gradle/repo' }
     }
     dependencies {
-        classpath 'com.github.cookpad:onesky-gradle-plugin:master' // jitpack
+        classpath 'rejasupotaro:onesky-gradle-plugin:0.1.0'
     }
 }
 apply plugin: 'rejasupotaro.onesky.plugin'
