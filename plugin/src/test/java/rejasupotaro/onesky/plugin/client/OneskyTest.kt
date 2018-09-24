@@ -75,7 +75,37 @@ class OneskyTest {
                 "api_key",
                 "dev_hash",
                 "timestamp",
-                "file_format")
+                "file_format",
+                "is_keeping_all_strings")
+        assertThat(paramsCaptor.firstValue.contains("is_keeping_all_strings" to "true"))
+    }
+
+    @Test
+    fun testUploadAndMarkAsDeprecated() {
+        val file = mock<File>()
+        val httpClient = mock<HttpClient> {
+            on {
+                post(any<String>(), any<List<Pair<String, String>>>(), any<File>())
+            }.doReturn(mock<Result<String, FuelError>> {})
+        }
+        onesky.httpClient = httpClient
+
+        onesky.upload(file, false)
+
+        val urlCaptor = argumentCaptor<String>()
+        val paramsCaptor = argumentCaptor<List<Pair<String, String>>>()
+        verify(httpClient).post(
+                urlCaptor.capture(),
+                paramsCaptor.capture(),
+                eq(file))
+        assertThat(urlCaptor.firstValue).isEqualTo("https://platform.api.onesky.io/1/projects/123456789/files")
+        assertThat(paramsCaptor.firstValue.map { it.first }).containsOnly(
+                "api_key",
+                "dev_hash",
+                "timestamp",
+                "file_format",
+                "is_keeping_all_strings")
+        assertThat(paramsCaptor.firstValue.contains("is_keeping_all_strings" to "false"))
     }
 
     @Test
