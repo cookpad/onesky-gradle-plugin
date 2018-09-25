@@ -21,9 +21,10 @@ class Onesky(val apiKey: String, val apiSecret: String, val projectId: Int) {
         return httpClient.get("$urlPrefix/projects/$projectId/translations", params)
     }
 
-    fun upload(translationFile: File): Result<String, FuelError> {
+    fun upload(translationFile: File, isKeepingAllStrings : Boolean = true): Result<String, FuelError> {
         val params = authParams()
         params.add("file_format" to "ANDROID_XML")
+        params.add("is_keeping_all_strings" to isKeepingAllStrings.toString())
 
         return httpClient.post("$urlPrefix/projects/$projectId/files", params, translationFile)
     }
