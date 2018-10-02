@@ -21,7 +21,7 @@ uploadTranslation - Upload the default translation file (values/strings.xml)
 // build.gradle
 buildscript {
     dependencies {
-        classpath 'rejasupotaro:onesky-gradle-plugin:<latest-version>'
+        classpath 'com.cookpad.android:onesky-gradle-plugin:<latest-version>'
     }
 }
 ```

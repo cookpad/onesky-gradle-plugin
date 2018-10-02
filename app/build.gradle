@@ -9,6 +9,7 @@ buildscript {
         maven { url 'https://repo.gradle.org/gradle/repo' }
     }
     dependencies {
+        // TODO: haven't updated yet
         classpath 'rejasupotaro:onesky-gradle-plugin:0.1.0'
     }
 }
