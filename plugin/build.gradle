@@ -42,7 +42,7 @@ uploadArchives {
     repositories {
         mavenDeployer {
             repository(url: uri('../repo'))
-            pom.groupId = 'rejasupotaro'
+            pom.groupId = 'com.cookpad.android'
             pom.artifactId = 'onesky-gradle-plugin'
             pom.version = '0.1.1-SNAPSHOT'
         }
@@ -50,11 +50,12 @@ uploadArchives {
 }
 
 publish {
-    groupId = 'rejasupotaro'
+    userOrg = 'cookpad-inc'
+    groupId = 'com.cookpad.android'
     artifactId = 'onesky-gradle-plugin'
-    publishVersion = '0.1.0'
+    publishVersion = '0.1.1-SNAPSHOT'
     desc = 'Gradle plugin for OneSky'
-    website = 'https://github.com/rejasupotaro/onesky-gradle-plugin'
+    website = 'https://github.com/cookpad/onesky-gradle-plugin'
     licences = ['MIT']
     autoPublish = true
 }
