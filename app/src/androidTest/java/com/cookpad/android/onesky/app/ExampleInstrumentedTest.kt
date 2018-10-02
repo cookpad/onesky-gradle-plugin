@@ -22,6 +22,6 @@ class ExampleInstrumentedTest {
         // Context of the rejasupotaro.onesky.app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
 
-        assertEquals("rejasupotaro.onesky.app", appContext.packageName)
+        assertEquals("com.cookpad.android.onesky.app", appContext.packageName)
     }
 }

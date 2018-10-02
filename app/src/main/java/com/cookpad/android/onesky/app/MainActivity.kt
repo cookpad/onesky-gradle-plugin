@@ -2,7 +2,7 @@ package com.cookpad.android.onesky.app
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import onesky.rejasupotaro.app.R
+import com.cookpad.android.onesky.app.R
 
 class MainActivity : AppCompatActivity() {
 
