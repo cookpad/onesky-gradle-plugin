@@ -21,6 +21,7 @@ apply plugin: 'kotlin'
 
 allprojects {
     repositories {
+        google()
         jcenter()
         maven {
             url uri("./repo")
