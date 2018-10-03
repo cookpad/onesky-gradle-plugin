@@ -53,7 +53,7 @@ publish {
     userOrg = 'cookpad-inc'
     groupId = 'com.cookpad.android'
     artifactId = 'onesky-gradle-plugin'
-    publishVersion = '0.1.1-SNAPSHOT'
+    publishVersion = '0.1.1'
     desc = 'Gradle plugin for OneSky'
     website = 'https://github.com/cookpad/onesky-gradle-plugin'
     licences = ['MIT']
