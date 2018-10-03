@@ -28,7 +28,7 @@ buildscript {
 
 ```groovy
 // app/build.gradle
-apply plugin: 'rejasupotaro.onesky.plugin'
+apply plugin: 'com.cookpad.android.onesky.plugin'
 onesky {
     apiKey "<api-key>"
     apiSecret "<api-secret>"
