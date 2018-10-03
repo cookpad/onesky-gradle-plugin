@@ -2,12 +2,14 @@ apply plugin: 'com.android.application'
 
 buildscript {
     repositories {
-        maven { url 'https://jitpack.io' }
         jcenter()
+        maven {
+            url uri("./repo")
+        }
+        maven { url 'https://repo.gradle.org/gradle/repo' }
     }
     dependencies {
-        // TODO: haven't updated yet
-        classpath 'com.github.kazu-matsu:onesky-gradle-plugin:km~rename-packagename-SNAPSHOT'
+        classpath 'com.cookpad.android:onesky-gradle-plugin:0.1.1'
     }
 }
 apply plugin: 'com.cookpad.android.onesky.plugin'
