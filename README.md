@@ -1,5 +1,7 @@
 # OneSky Gradle plugin
 
+[ ![Download](https://api.bintray.com/packages/cookpad-inc/maven/onesky-gradle-plugin/images/download.svg) ](https://bintray.com/cookpad-inc/maven/onesky-gradle-plugin/_latestVersion)
+
 Gradle Plugin for [OneSky](https://www.oneskyapp.com/)
 
 ## Tasks
@@ -35,3 +37,6 @@ onesky {
     projectId <project_id>
 }
 ```
+
+# License
+MIT
