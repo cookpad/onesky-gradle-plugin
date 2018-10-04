@@ -3,7 +3,7 @@
 ## v0.1.1
 
 ### Breaking change
-- Changed a repository to publish the library
+- Changed the repository from `rejasupotaro` to `com.cookpad.android`
     - new:
         ```groovy
         // build.gradle
