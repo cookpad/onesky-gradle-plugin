@@ -9,7 +9,7 @@ import java.io.File
 
 
 class OneskyTest {
-    val onesky: Onesky by lazy {
+    internal val onesky: Onesky by lazy {
         val apiKey = "<api-key>"
         val apiSecret = "<api-secret>"
         val projectId = 123456789

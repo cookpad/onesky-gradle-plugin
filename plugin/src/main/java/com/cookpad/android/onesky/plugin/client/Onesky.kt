@@ -6,12 +6,12 @@ import org.apache.commons.codec.binary.Hex
 import java.io.File
 import java.security.MessageDigest
 
-class Onesky(val apiKey: String, val apiSecret: String, val projectId: Int) {
-    val endpoint = "https://platform.api.onesky.io"
-    val version = 1
-    val urlPrefix
+internal class Onesky(val apiKey: String, val apiSecret: String, val projectId: Int) {
+    internal val endpoint = "https://platform.api.onesky.io"
+    internal val version = 1
+    internal val urlPrefix
         get() = "$endpoint/$version"
-    var httpClient = HttpClient()
+    internal var httpClient = HttpClient()
 
     fun download(locale: String): Result<String, FuelError> {
         val params = authParams()

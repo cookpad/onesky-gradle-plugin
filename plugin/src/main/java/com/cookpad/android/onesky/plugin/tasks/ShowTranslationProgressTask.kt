@@ -1,15 +1,25 @@
 package com.cookpad.android.onesky.plugin.tasks
 
+import com.cookpad.android.onesky.plugin.OneskyExtension
+import com.cookpad.android.onesky.plugin.client.Onesky
+import com.cookpad.android.onesky.plugin.gson
 import com.github.kittinunf.result.Result
 import com.google.gson.annotations.SerializedName
-import org.gradle.api.tasks.TaskAction
 import com.jakewharton.fliptables.FlipTable
+import org.gradle.api.DefaultTask
+import org.gradle.api.tasks.TaskAction
 import org.joda.time.DateTime
 import org.joda.time.format.DateTimeFormat
-import com.cookpad.android.onesky.plugin.gson
 
+open class ShowTranslationProgressTask : DefaultTask() {
+    private val oneskyClient by lazy {
+        val oneskyExtension= project.extensions.findByType(OneskyExtension::class.java)
+        val apiKey = oneskyExtension!!.apiKey
+        val apiSecret = oneskyExtension.apiSecret
+        val projectId = oneskyExtension.projectId
+        Onesky(apiKey, apiSecret, projectId)
+    }
 
-open class ShowTranslationProgressTask : OneskyTask() {
     init {
         group = "Translation"
         description = "Show translation progress"
