@@ -10,16 +10,7 @@ import org.gradle.api.tasks.TaskAction
 import java.io.File
 
 open class DownloadTranslationTask : DefaultTask() {
-    private val oneskyExtension by lazy {
-        project.extensions.findByType(OneskyExtension::class.java)
-    }
-
-    private val oneskyClient by lazy {
-        val apiKey = oneskyExtension!!.apiKey
-        val apiSecret = oneskyExtension!!.apiSecret
-        val projectId = oneskyExtension!!.projectId
-        Onesky(apiKey, apiSecret, projectId)
-    }
+    private fun oneskyExtension() = project.extensions.findByType(OneskyExtension::class.java)
 
     init {
         group = "Translation"
@@ -29,15 +20,15 @@ open class DownloadTranslationTask : DefaultTask() {
     private val resDir by lazy { File("${project.projectDir.absolutePath}/src/main/res") }
 
     private val locales by lazy {
-        if (oneskyExtension!!.locales.isEmpty()) {
+        if (oneskyExtension()!!.locales.isEmpty()) {
             resDir.listFiles()
-                    .filter { it.name.startsWith("values-") }
-                    .filter {
-                        File("${it.absolutePath}/strings.xml").exists()
-                    }
-                    .map { localeFromValuesDirName(it.name) }
+                .filter { it.name.startsWith("values-") }
+                .filter {
+                    File("${it.absolutePath}/strings.xml").exists()
+                }
+                .map { localeFromValuesDirName(it.name) }
         } else {
-            oneskyExtension!!.locales
+            oneskyExtension()!!.locales
         }
     }
 
@@ -50,6 +41,12 @@ open class DownloadTranslationTask : DefaultTask() {
         locales.forEach { locale ->
             val file = targetStringsFile(locale)
             print("Downloading $locale translation into ${file.absolutePath} ... ")
+
+            val oneskyExtension = oneskyExtension()
+            val apiKey = oneskyExtension!!.apiKey
+            val apiSecret = oneskyExtension!!.apiSecret
+            val projectId = oneskyExtension!!.projectId
+            val oneskyClient = Onesky(apiKey, apiSecret, projectId)
 
             val result = oneskyClient.download(locale)
             when (result) {
