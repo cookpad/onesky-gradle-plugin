@@ -1,12 +1,26 @@
 package com.cookpad.android.onesky.plugin.tasks
 
+import com.cookpad.android.onesky.plugin.OneskyExtension
+import com.cookpad.android.onesky.plugin.client.Onesky
 import com.cookpad.android.onesky.plugin.localeFromValuesDirName
 import com.cookpad.android.onesky.plugin.valuesDirNameFromLocale
 import com.github.kittinunf.result.Result
+import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
 import java.io.File
 
-open class DownloadTranslationTask : OneskyTask() {
+open class DownloadTranslationTask : DefaultTask() {
+    private val oneskyExtension by lazy {
+        project.extensions.findByType(OneskyExtension::class.java)
+    }
+
+    private val oneskyClient by lazy {
+        val apiKey = oneskyExtension!!.apiKey
+        val apiSecret = oneskyExtension!!.apiSecret
+        val projectId = oneskyExtension!!.projectId
+        Onesky(apiKey, apiSecret, projectId)
+    }
+
     init {
         group = "Translation"
         description = "Download specified translation files (values-*/strings.xml)"

@@ -4,8 +4,6 @@ import org.gradle.api.tasks.Input
 
 internal open class OneskyExtension {
     @Input
-    var plugin: String = ""
-    @Input
     var apiKey: String = ""
     @Input
     var apiSecret: String = ""
