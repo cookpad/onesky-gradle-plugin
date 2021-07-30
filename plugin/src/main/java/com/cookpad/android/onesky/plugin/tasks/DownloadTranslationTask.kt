@@ -1,9 +1,9 @@
 package com.cookpad.android.onesky.plugin.tasks
 
-import com.github.kittinunf.result.Result
-import org.gradle.api.tasks.TaskAction
 import com.cookpad.android.onesky.plugin.localeFromValuesDirName
 import com.cookpad.android.onesky.plugin.valuesDirNameFromLocale
+import com.github.kittinunf.result.Result
+import org.gradle.api.tasks.TaskAction
 import java.io.File
 
 open class DownloadTranslationTask : OneskyTask() {
@@ -12,9 +12,9 @@ open class DownloadTranslationTask : OneskyTask() {
         description = "Download specified translation files (values-*/strings.xml)"
     }
 
-    val resDir by lazy { File("${project.projectDir.absolutePath}/src/main/res") }
+    private val resDir by lazy { File("${project.projectDir.absolutePath}/src/main/res") }
 
-    val locales by lazy {
+    private val locales by lazy {
         if (oneskyExtension!!.locales.isEmpty()) {
             resDir.listFiles()
                     .filter { it.name.startsWith("values-") }

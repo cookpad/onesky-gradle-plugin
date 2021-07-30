@@ -28,6 +28,7 @@ dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "com.github.kittinunf.fuel:fuel:1.10.0"
+
     implementation "commons-codec:commons-codec:1.10"
     implementation 'com.google.code.gson:gson:2.8.2'
     implementation 'com.jakewharton.fliptables:fliptables:1.0.2'
